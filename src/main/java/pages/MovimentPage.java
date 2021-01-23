@@ -50,4 +50,16 @@ public class MovimentPage extends BasePage {
         return getTextComponent(By.xpath("//div[@class='alert alert-success']"));
     }
 
+    public String getMsgRequiredDateMovement() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Data da Movimentação é obrigatório']"));
+    }
+
+    public String getMsgRequiredDatePayment() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Data do pagamento é obrigatório']"));
+    }
+
+    public String getMsgRequiredDescription() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Descrição é obrigatório']"));
+    }
+
 }

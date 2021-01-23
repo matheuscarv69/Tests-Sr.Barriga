@@ -28,5 +28,38 @@ public class MovimentTest extends BaseTest {
         Assert.assertEquals("Movimentação adicionada com sucesso!", movimentPage.getMessageSuccess());
     }
 
+    @Test
+    public void testBusinessRuleDateMovement() {
+        menuPage.accessScreenCreateMovement();
+
+        movimentPage.setType("Receita");
+        movimentPage.clickButtonSave();
+
+        Assert.assertEquals("Data da Movimentação é obrigatório", movimentPage.getMsgRequiredDateMovement());
+    }
+
+    @Test
+    public void testBusinessRuleDatePayment() {
+        menuPage.accessScreenCreateMovement();
+
+        movimentPage.setType("Receita");
+        movimentPage.setDateMoviment("21/01/2021");
+        movimentPage.clickButtonSave();
+
+        Assert.assertEquals("Data do pagamento é obrigatório", movimentPage.getMsgRequiredDatePayment());
+    }
+
+    @Test
+    public void testBusinessRuleDescription() {
+        menuPage.accessScreenCreateMovement();
+
+        movimentPage.setType("Receita");
+        movimentPage.setDateMoviment("21/01/2021");
+        movimentPage.setDatePayment("30/01/2021");
+        movimentPage.clickButtonSave();
+
+        Assert.assertEquals("Descrição é obrigatório", movimentPage.getMsgRequiredDescription());
+    }
+
 
 }
