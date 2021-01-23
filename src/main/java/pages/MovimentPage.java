@@ -62,4 +62,17 @@ public class MovimentPage extends BasePage {
         return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Descrição é obrigatório']"));
     }
 
+    public String getMsgRequiredInterested() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Interessado é obrigatório']"));
+    }
+
+    public String getMsgRequiredValue() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Valor é obrigatório']"));
+    }
+
+    public String getMsgRequiredValueNumber() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Valor deve ser um número']"));
+    }
+
+
 }

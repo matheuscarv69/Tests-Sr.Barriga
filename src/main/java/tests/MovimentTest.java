@@ -61,5 +61,47 @@ public class MovimentTest extends BaseTest {
         Assert.assertEquals("Descrição é obrigatório", movimentPage.getMsgRequiredDescription());
     }
 
+    @Test
+    public void testBusinessRuleInterested() {
+        menuPage.accessScreenCreateMovement();
+
+        movimentPage.setType("Receita");
+        movimentPage.setDateMoviment("21/01/2021");
+        movimentPage.setDatePayment("30/01/2021");
+        movimentPage.setDescription("Business Rule Teste");
+        movimentPage.clickButtonSave();
+
+        Assert.assertEquals("Interessado é obrigatório", movimentPage.getMsgRequiredInterested());
+    }
+
+    @Test
+    public void testBusinessRuleValue() {
+        menuPage.accessScreenCreateMovement();
+
+        movimentPage.setType("Receita");
+        movimentPage.setDateMoviment("21/01/2021");
+        movimentPage.setDatePayment("30/01/2021");
+        movimentPage.setDescription("Business Rule Teste");
+        movimentPage.setInterested("Fulano");
+        movimentPage.clickButtonSave();
+
+        Assert.assertEquals("Valor é obrigatório", movimentPage.getMsgRequiredValue());
+    }
+
+    @Test
+    public void testBusinessRuleValueNumber() {
+        menuPage.accessScreenCreateMovement();
+
+        movimentPage.setType("Receita");
+        movimentPage.setDateMoviment("21/01/2021");
+        movimentPage.setDatePayment("30/01/2021");
+        movimentPage.setDescription("Business Rule Teste");
+        movimentPage.setInterested("Fulano");
+        movimentPage.setValue("Teste palavra no valor");
+        movimentPage.clickButtonSave();
+
+        Assert.assertEquals("Valor deve ser um número", movimentPage.getMsgRequiredValueNumber());
+    }
+
 
 }
