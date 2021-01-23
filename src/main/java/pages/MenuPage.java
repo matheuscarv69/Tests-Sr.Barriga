@@ -14,4 +14,8 @@ public class MenuPage extends BasePage {
         clickLink("Listar");
     }
 
+    public void accessScreenCreateMovement() {
+        clickLink("Criar Movimentação");
+    }
+
 }
