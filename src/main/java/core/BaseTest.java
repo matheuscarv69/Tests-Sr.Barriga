@@ -7,7 +7,7 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import pages.SrBarrigaPage;
+import pages.LoginPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,13 +17,13 @@ import static core.DriverFactory.killDriver;
 
 public class BaseTest {
 
-    private SrBarrigaPage page = new SrBarrigaPage();
+    private LoginPage page = new LoginPage();
 
     @Rule
     public TestName testName = new TestName();
 
     @Before
-    public void initiliazer(){
+    public void initializer(){
         page.accessHomePage();
 
         page.setEmail("matheus69@gmail.com");

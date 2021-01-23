@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import static core.DriverFactory.getDriver;
 
-public class SrBarrigaPage extends BasePage {
+public class LoginPage extends BasePage {
 
     public void accessHomePage() {
         getDriver().get("https://seubarriga.wcaquino.me/login");
