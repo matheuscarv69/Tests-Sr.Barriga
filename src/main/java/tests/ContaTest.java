@@ -30,7 +30,16 @@ public class ContaTest extends BaseTest {
         contasPage.clickButtonSalvar();
 
         Assert.assertEquals("Conta alterada com sucesso!", contasPage.getMessageSuccess());
+    }
 
+    @Test
+    public void testInsertAccountDuplicated() {
+        menuPage.accessScreenInsertAccount();
+
+        contasPage.setAccountName("Conta do Teste alterada");
+        contasPage.clickButtonSalvar();
+
+        Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.getMessageFailed());
     }
 
 }

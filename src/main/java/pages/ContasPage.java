@@ -17,8 +17,12 @@ public class ContasPage extends BasePage {
         return getTextComponent(By.xpath("//div[@class='alert alert-success']"));
     }
 
+    public String getMessageFailed() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']"));
+    }
+
     public void clickButtonAlterConta(String conta) {
-        getCelula("Conta", conta,"Ações","tabelaContas")
+        getCelula("Conta", conta, "Ações", "tabelaContas")
                 .findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
     }
 
