@@ -103,8 +103,12 @@ public class BasePage {
 
     /********* Botao ************/
 
+    public void clickButton(By by) {
+        getDriver().findElement(by).click();
+    }
+
     public void clickButton(String field_id) {
-        getDriver().findElement(By.id(field_id)).click();
+        clickButton(By.id(field_id));
     }
 
     /********* Link ************/
