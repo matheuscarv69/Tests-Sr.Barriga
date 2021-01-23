@@ -74,5 +74,10 @@ public class MovimentPage extends BasePage {
         return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Valor deve ser um número']"));
     }
 
+    /** Pega a mensagem de erro de data de movimentacao aior que data de pagamento **/
+    public String getMsgRequiredInvalidFutureMovement(){
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']//li[.='Data da Movimentação deve ser menor ou igual à data atual']"));
+    }
+
 
 }

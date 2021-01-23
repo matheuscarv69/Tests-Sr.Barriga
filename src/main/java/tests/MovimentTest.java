@@ -103,5 +103,23 @@ public class MovimentTest extends BaseTest {
         Assert.assertEquals("Valor deve ser um número", movimentPage.getMsgRequiredValueNumber());
     }
 
+    /** Verifica se a data de movimentacao eh maior que a data de pagamento **/
+    @Test
+    public void testBusinessRuleFutureMovement(){
+        menuPage.accessScreenCreateMovement();
+
+        movimentPage.setType("Receita");
+
+        // Data invalida para teste de msg de data invalida
+        movimentPage.setDateMoviment("21/01/2022");
+        movimentPage.setDatePayment("30/01/2021");
+
+        movimentPage.setDescription("Business Rule Teste");
+        movimentPage.setInterested("Fulano");
+        movimentPage.setValue("150.50");
+        movimentPage.clickButtonSave();
+
+        Assert.assertEquals("Data da Movimentação deve ser menor ou igual à data atual", movimentPage.getMsgRequiredInvalidFutureMovement());
+    }
 
 }
