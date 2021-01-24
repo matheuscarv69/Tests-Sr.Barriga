@@ -51,6 +51,24 @@ Caso execute individualmente os testes, tenha atenção, pois alguns testes depe
 A ordem é essa:
 ![OrderTest](https://i.imgur.com/jUTZjlU.png)
 
+## 🔎 Log dos testes
+
+É possível visualizar de duas formas:
+
+### 1️⃣ Terminal
+
+Ao final do teste, é mostrado no terminal se o mesmo passou ou se deu algum erro:
+
+![terminal](https://i.imgur.com/5HXNYbs.jpg)
+
+### 2️⃣ Screenshot
+
+Cada teste ao final tira um print da tela do Navegador usado, esse screenshot é salvo dentro da pasta **target**, dentro da subpasta **screenshot**.
+
+Cada print possui o nome referente ao teste que o gerou.
+
+![screenshot](https://i.imgur.com/dLTOdbn.jpg) 
+
 ## 🛠 Tecnologias
 As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 
@@ -58,9 +76,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 - [Selenium 3.4.0 Maven Dependency](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.4.0)
 - [JUnit](https://junit.org/junit5/)
 
-## 😏 Status do Projeto
-
-🚧Ainda em construção🚧
+## 😏 Status do Projeto: ✅ Finalizado
 
 ### 👨🏻‍💻 Autor
 ---
