@@ -2,17 +2,20 @@ package tests;
 
 import core.BaseTest;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import pages.ContasPage;
 import pages.MenuPage;
 
-public class ContaTest extends BaseTest {
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class AccountTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();
     ContasPage contasPage = new ContasPage();
 
     @Test
-    public void testInsertAccount() {
+    public void test1InsertAccount() {
         menuPage.accessScreenInsertAccount();
 
         contasPage.setAccountName("Conta do Teste");
@@ -22,7 +25,7 @@ public class ContaTest extends BaseTest {
     }
 
     @Test
-    public void testAlterAccount() {
+    public void test2AlterAccount() {
         menuPage.accessScreenAccountOptions();
 
         contasPage.clickButtonAlterAccount("Conta do Teste");
@@ -33,7 +36,7 @@ public class ContaTest extends BaseTest {
     }
 
     @Test
-    public void testInsertAccountDuplicated() {
+    public void test3InsertAccountDuplicated() {
         menuPage.accessScreenInsertAccount();
 
         contasPage.setAccountName("Conta do Teste alterada");
@@ -42,14 +45,7 @@ public class ContaTest extends BaseTest {
         Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.getMessageFailed());
     }
 
-    @Test
-    public void testRemoveAccountWithMovements() {
-        menuPage.accessScreenAccountOptions();
 
-        contasPage.clickButtonRemoveAccount("Conta do Teste alterada");
-
-        Assert.assertEquals("Conta em uso na movimentações", contasPage.getMessageFailed());
-    }
 
 
 }

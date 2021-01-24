@@ -3,7 +3,7 @@ package pages;
 import core.BasePage;
 import org.openqa.selenium.By;
 
-public class MovimentPage extends BasePage {
+public class MovementPage extends BasePage {
 
 
     public void setType(String option) {
@@ -46,8 +46,17 @@ public class MovimentPage extends BasePage {
         clickButton(By.xpath("//button[@class='btn btn-primary']"));
     }
 
+    public void clickButtonRemoveAccount(String account) {
+        getCelula("Conta", account, "Ações", "tabelaContas")
+                .findElement(By.xpath(".//span[@class='glyphicon glyphicon-remove-circle']")).click();
+    }
+
     public String getMessageSuccess() {
         return getTextComponent(By.xpath("//div[@class='alert alert-success']"));
+    }
+
+    public String getMessageFailed() {
+        return getTextComponent(By.xpath("//div[@class='alert alert-danger']"));
     }
 
     public String getMsgRequiredDateMovement() {

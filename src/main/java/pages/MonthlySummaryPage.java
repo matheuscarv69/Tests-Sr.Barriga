@@ -1,10 +1,13 @@
 package pages;
 
 import core.BasePage;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 
 import static core.DriverFactory.getDriver;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MonthlySummaryPage extends BasePage {
 
     public void setMonth(String month) {
