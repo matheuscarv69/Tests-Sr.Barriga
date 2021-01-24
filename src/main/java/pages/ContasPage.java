@@ -31,10 +31,5 @@ public class ContasPage extends BasePage {
                 .findElement(By.xpath(".//span[@class='glyphicon glyphicon-remove-circle']")).click();
     }
 
-    public String getBalanceAccount(String account, String valueExpected) {
-        return getCelula("Conta", account, "Saldo", "tabelaSaldo")
-                .findElement(By.xpath("//table[@id='tabelaSaldo']//tr//td[.='" + account + "']/..//td[.='" + valueExpected + "']")).getText();
-    }
-
 
 }
