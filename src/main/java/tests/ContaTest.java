@@ -43,7 +43,7 @@ public class ContaTest extends BaseTest {
     }
 
     @Test
-    public void testeRemoveAccountWithMovements() {
+    public void testRemoveAccountWithMovements() {
         menuPage.accessScreenAccountOptions();
 
         contasPage.clickButtonRemoveAccount("Conta do Teste alterada");
@@ -51,4 +51,13 @@ public class ContaTest extends BaseTest {
         Assert.assertEquals("Conta em uso na movimentações", contasPage.getMessageFailed());
     }
 
+    @Test
+    public void testGetBalanceAccount() {
+        menuPage.accessScreenHome();
+
+        String balanceExpected = "-150.50";
+        String balanceAccount = contasPage.getBalanceAccount("Conta do Teste alterada", balanceExpected);
+
+        Assert.assertEquals(balanceExpected, balanceAccount);
+    }
 }

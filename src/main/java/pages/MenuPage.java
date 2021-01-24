@@ -4,6 +4,10 @@ import core.BasePage;
 
 public class MenuPage extends BasePage {
 
+    public void accessScreenHome() {
+        clickLink("Home");
+    }
+
     public void accessScreenInsertAccount() {
         clickLink("Contas");
         clickLink("Adicionar");
@@ -18,7 +22,7 @@ public class MenuPage extends BasePage {
         clickLink("Criar Movimentação");
     }
 
-    public void accessScreenMonthlySummary(){
+    public void accessScreenMonthlySummary() {
         clickLink("Resumo Mensal");
     }
 
