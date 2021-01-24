@@ -3,7 +3,7 @@ package pages;
 import core.BasePage;
 import org.openqa.selenium.By;
 
-public class ContasPage extends BasePage {
+public class AccountPage extends BasePage {
 
     public void setAccountName(String name) {
         write("nome", name);
@@ -26,6 +26,10 @@ public class ContasPage extends BasePage {
                 .findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
     }
 
+    public void clickButtonRemoveAccount(String account) {
+        getCelula("Conta", account, "Ações", "tabelaContas")
+                .findElement(By.xpath(".//span[@class='glyphicon glyphicon-remove-circle']")).click();
+    }
 
 
 }

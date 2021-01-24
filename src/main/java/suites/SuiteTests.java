@@ -10,8 +10,10 @@ import tests.*;
         MovementTest.class,
         RemoveMovementAccountTest.class,
         BalanceTest.class,
-        MonthlySummaryTest.class
+        MonthlySummaryTest.class,
+        RemoveAccountTest.class
 })
+
 public class SuiteTests {
 
 }
