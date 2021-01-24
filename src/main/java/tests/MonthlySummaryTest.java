@@ -28,10 +28,9 @@ public class MonthlySummaryTest extends BaseTest {
     }
 
     @Test
-    public void test2CheckTitleMonthlySummary(){
+    public void test2CheckTitleMonthlySummary() {
         menuPage.accessScreenMonthlySummary();
 
         Assert.assertEquals("Seu Barriga - Extrato", monthlySummaryPage.getTitlePage());
     }
-
 }

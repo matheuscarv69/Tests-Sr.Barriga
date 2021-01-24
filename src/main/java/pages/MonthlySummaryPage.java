@@ -3,7 +3,9 @@ package pages;
 import core.BasePage;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
+
+import java.util.List;
 
 import static core.DriverFactory.getDriver;
 
@@ -33,6 +35,12 @@ public class MonthlySummaryPage extends BasePage {
 
     public String getTitlePage() {
         return getDriver().getTitle();
+    }
+
+    public boolean isEmptyMonthlySummaryPage() {
+        List<WebElement> list = getDriver().findElements(By.xpath("//table[@id='tabelaExtrato']/tbody/tr"));
+
+        return list.isEmpty();
     }
 
 }
