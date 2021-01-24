@@ -200,7 +200,7 @@ public class BasePage {
         WebElement celula = getCelula(colunaBusca, valor, colunaBotao, idTabela);
         celula.findElement(By.xpath(".//input")).click();
     }
-
+    //
     private int obterIndiceLinha(String valor, WebElement tabela, int idColuna) {
         List<WebElement> linhas = tabela.findElements(By.xpath("./tbody/tr/td[" + idColuna + "]"));
         int idLinha = -1;

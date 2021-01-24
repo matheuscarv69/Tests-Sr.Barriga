@@ -13,6 +13,7 @@ public class MovementTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();
     MovementPage movementPage = new MovementPage();
+    AccountTest test = new AccountTest();
 
     @Test
     public void test1CreateMoviment() {
