@@ -23,9 +23,9 @@ public class ContaTest extends BaseTest {
 
     @Test
     public void testAlterAccount() {
-        menuPage.accessScreenAlterAccount();
+        menuPage.accessScreenAccountOptions();
 
-        contasPage.clickButtonAlterConta("Conta do Teste");
+        contasPage.clickButtonAlterAccount("Conta do Teste");
         contasPage.setAccountName("Conta do Teste alterada");
         contasPage.clickButtonSalvar();
 
@@ -40,6 +40,15 @@ public class ContaTest extends BaseTest {
         contasPage.clickButtonSalvar();
 
         Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.getMessageFailed());
+    }
+
+    @Test
+    public void testeRemoveAccountWithMovements() {
+        menuPage.accessScreenAccountOptions();
+
+        contasPage.clickButtonRemoveAccount("Conta do Teste alterada");
+
+        Assert.assertEquals("Conta em uso na movimentações", contasPage.getMessageFailed());
     }
 
 }

@@ -21,10 +21,17 @@ public class ContasPage extends BasePage {
         return getTextComponent(By.xpath("//div[@class='alert alert-danger']"));
     }
 
-    public void clickButtonAlterConta(String conta) {
-        getCelula("Conta", conta, "Ações", "tabelaContas")
+    public void clickButtonAlterAccount(String account) {
+        getCelula("Conta", account, "Ações", "tabelaContas")
                 .findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
     }
+
+    public void clickButtonRemoveAccount(String account){
+        getCelula("Conta", account,"Ações","tabelaContas")
+                .findElement(By.xpath(".//span[@class='glyphicon glyphicon-remove-circle']")).click();
+
+    }
+
 
 
 }

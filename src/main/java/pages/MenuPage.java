@@ -9,7 +9,7 @@ public class MenuPage extends BasePage {
         clickLink("Adicionar");
     }
 
-    public void accessScreenAlterAccount() {
+    public void accessScreenAccountOptions() {
         clickLink("Contas");
         clickLink("Listar");
     }
