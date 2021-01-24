@@ -18,4 +18,8 @@ public class MenuPage extends BasePage {
         clickLink("Criar Movimentação");
     }
 
+    public void accessScreenMonthlySummary(){
+        clickLink("Resumo Mensal");
+    }
+
 }
