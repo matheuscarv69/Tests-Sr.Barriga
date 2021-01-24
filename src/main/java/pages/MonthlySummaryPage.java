@@ -3,6 +3,8 @@ package pages;
 import core.BasePage;
 import org.openqa.selenium.By;
 
+import static core.DriverFactory.getDriver;
+
 public class MonthlySummaryPage extends BasePage {
 
     public void setMonth(String month) {
@@ -26,5 +28,8 @@ public class MonthlySummaryPage extends BasePage {
         return getTextComponent(By.xpath("//div[@class='alert alert-success'][.='Movimentação removida com sucesso!']"));
     }
 
+    public String getTitlePage() {
+        return getDriver().getTitle();
+    }
 
 }

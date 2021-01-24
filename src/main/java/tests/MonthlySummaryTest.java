@@ -24,4 +24,11 @@ public class MonthlySummaryTest extends BaseTest {
         Assert.assertEquals("Movimentação removida com sucesso!", monthlySummaryPage.getMessageSuccess());
     }
 
+    @Test
+    public void testCheckTitleMonthlySummary(){
+        menuPage.accessScreenMonthlySummary();
+
+        Assert.assertEquals("Seu Barriga - Extrato", monthlySummaryPage.getTitlePage());
+    }
+
 }
