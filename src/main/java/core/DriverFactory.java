@@ -43,34 +43,34 @@ public class DriverFactory {
             }
         }
 
-        if (Properties.TIPO_EXECUCAO == Properties.TypeExecution.GRID) {
-            DesiredCapabilities cap = null;
-            switch (Properties.BROWSER) {
-                case CHROME:
-                    cap = DesiredCapabilities.chrome();
-                    break;
-                case FIREFOX:
-                    cap = DesiredCapabilities.firefox();
-                    break;
-            }
-        }
-        if (Properties.TIPO_EXECUCAO == Properties.TypeExecution.CLOUD) {
-            DesiredCapabilities cap = null;
-            switch (Properties.BROWSER) {
-                case CHROME:
-                    cap = DesiredCapabilities.chrome();
-                    break;
-                case FIREFOX:
-                    cap = DesiredCapabilities.firefox();
-                    break;
-            }
-
-            try {
-                driver = new RemoteWebDriver(new URL("https://matheuscarv69:05461be1-0491-4f3b-b0a5-fe58cb5ae93f@ondemand.us-west-1.saucelabs.com:443/wd/hub"), cap);
-            } catch (MalformedURLException e) {
-                System.out.println("Erro :  " + e.getMessage());
-            }
-        }
+//        if (Properties.TIPO_EXECUCAO == Properties.TypeExecution.GRID) {
+//            DesiredCapabilities cap = null;
+//            switch (Properties.BROWSER) {
+//                case CHROME:
+//                    cap = DesiredCapabilities.chrome();
+//                    break;
+//                case FIREFOX:
+//                    cap = DesiredCapabilities.firefox();
+//                    break;
+//            }
+//        }
+//        if (Properties.TIPO_EXECUCAO == Properties.TypeExecution.CLOUD) {
+//            DesiredCapabilities cap = null;
+//            switch (Properties.BROWSER) {
+//                case CHROME:
+//                    cap = DesiredCapabilities.chrome();
+//                    break;
+//                case FIREFOX:
+//                    cap = DesiredCapabilities.firefox();
+//                    break;
+//            }
+//
+//            try {
+//                driver = new RemoteWebDriver(new URL("https://matheuscarv69:05461be1-0491-4f3b-b0a5-fe58cb5ae93f@ondemand.us-west-1.saucelabs.com:443/wd/hub"), cap);
+//            } catch (MalformedURLException e) {
+//                System.out.println("Erro :  " + e.getMessage());
+//            }
+//        }
 
         driver.manage().window().setSize(new Dimension(1200, 765));
 

@@ -8,7 +8,7 @@ public class Properties {
 
     /** Informe o Browser que deseja executar os testes **/
     public static Browsers BROWSER = Browsers.CHROME;
-    public static TypeExecution TIPO_EXECUCAO = TypeExecution.CLOUD;
+    public static TypeExecution TIPO_EXECUCAO = TypeExecution.LOCAL;
 
     public enum Browsers{
         CHROME,

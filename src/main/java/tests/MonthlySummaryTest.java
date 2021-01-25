@@ -2,9 +2,7 @@ package tests;
 
 import core.BaseTest;
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 import pages.MenuPage;
 import pages.MonthlySummaryPage;
 
