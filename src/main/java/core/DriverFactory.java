@@ -4,6 +4,11 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class DriverFactory {
 
@@ -26,13 +31,34 @@ public class DriverFactory {
     public static WebDriver initDriver() {
         WebDriver driver = null;
 
-        switch (Properties.browsers) {
-            case CHROME:
-                driver = new ChromeDriver();
-                break;
-            case FIREFOX:
-                driver = new FirefoxDriver();
-                break;
+        if (Properties.TIPO_EXECUCAO == Properties.TypeExecution.LOCAL) {
+
+            switch (Properties.BROWSER) {
+                case CHROME:
+                    driver = new ChromeDriver();
+                    break;
+                case FIREFOX:
+                    driver = new FirefoxDriver();
+                    break;
+            }
+        }
+
+        if (Properties.TIPO_EXECUCAO == Properties.TypeExecution.GRID) {
+            DesiredCapabilities cap = null;
+            switch (Properties.BROWSER) {
+                case CHROME:
+                    cap = DesiredCapabilities.chrome();
+                    break;
+                case FIREFOX:
+                    cap = DesiredCapabilities.firefox();
+                    break;
+            }
+
+            try {
+                driver = new RemoteWebDriver(new URL(" http://192.168.0.109:4444/wd/hub"), cap);
+            } catch (MalformedURLException e) {
+                System.out.println("Erro :  " + e.getMessage());
+            }
         }
         driver.manage().window().setSize(new Dimension(1200, 765));
 

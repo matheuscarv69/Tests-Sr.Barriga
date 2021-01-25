@@ -7,11 +7,17 @@ public class Properties {
     public static boolean CLOSE_BROWSER = true;
 
     /** Informe o Browser que deseja executar os testes **/
-    public static Browsers browsers = Browsers.CHROME;
+    public static Browsers BROWSER = Browsers.CHROME;
+    public static TypeExecution TIPO_EXECUCAO = TypeExecution.GRID;
 
     public enum Browsers{
         CHROME,
         FIREFOX
+    }
+
+    public enum TypeExecution{
+        LOCAL,
+        GRID
     }
 
 
