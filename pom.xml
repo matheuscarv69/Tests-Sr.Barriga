@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <build>
@@ -26,7 +26,7 @@
                             <include>suites/*.java</include>
                         </includes>
                         <parallel>all</parallel>
-                        <threadCount>3</threadCount>
+                        <threadCount>1</threadCount>
                     </configuration>
                 </plugin>
             </plugins>

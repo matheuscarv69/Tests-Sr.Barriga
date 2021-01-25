@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 
 import static core.DriverFactory.getDriver;
 
+
 public class LoginPage extends BasePage {
 
     public void accessHomePage() {
@@ -19,13 +20,9 @@ public class LoginPage extends BasePage {
         write("senha", password);
     }
 
-    public void clickButtonEnter(){
+    public void clickButtonEnter() {
         clickButton(By.xpath("//button[.='Entrar']"));
     }
-
-
-
-
 
 
 }

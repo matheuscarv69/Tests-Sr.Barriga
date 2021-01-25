@@ -22,7 +22,7 @@ public class MonthlySummaryTest extends BaseTest {
         monthlySummaryPage.setYear("2021");
         monthlySummaryPage.clickButtonBuscar();
 
-        monthlySummaryPage.clickButtonRemoveMovement("Movimentação Teste");
+        monthlySummaryPage.clickButtonRemoveMovement("Movimentacao para exclusao");
 
         Assert.assertEquals("Movimentação removida com sucesso!", monthlySummaryPage.getMessageSuccess());
     }
@@ -32,5 +32,12 @@ public class MonthlySummaryTest extends BaseTest {
         menuPage.accessScreenMonthlySummary();
 
         Assert.assertEquals("Seu Barriga - Extrato", monthlySummaryPage.getTitlePage());
+
+        monthlySummaryPage.setYear("2016");
+        monthlySummaryPage.clickButtonBuscar();
+
+        boolean isEmpty = monthlySummaryPage.isEmptyMonthlySummaryPage();
+
+        Assert.assertTrue(isEmpty);
     }
 }

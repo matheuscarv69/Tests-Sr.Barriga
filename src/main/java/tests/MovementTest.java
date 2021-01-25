@@ -25,7 +25,7 @@ public class MovementTest extends BaseTest {
         movementPage.setDescription("Movimentação Teste");
         movementPage.setInterested("Fulano");
         movementPage.setValue("150.50");
-        movementPage.setAccount("Conta do Teste alterada");
+        movementPage.setAccount("Conta para movimentacoes");
         movementPage.setSituationPaidOut();
         movementPage.clickButtonSave();
 
@@ -121,6 +121,7 @@ public class MovementTest extends BaseTest {
         movementPage.setDescription("Business Rule Teste");
         movementPage.setInterested("Fulano");
         movementPage.setValue("150.50");
+        movementPage.setAccount("Conta para movimentacoes");
         movementPage.clickButtonSave();
 
         Assert.assertEquals("Data da Movimentação deve ser menor ou igual à data atual", movementPage.getMsgRequiredInvalidFutureMovement());

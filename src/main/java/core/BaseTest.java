@@ -23,24 +23,15 @@ public class BaseTest {
     @Rule
     public TestName testName = new TestName();
 
-    /**
-     *  o trecho do @Before foi comentado por conta que durante a execucao da SuiteTests
-     *  esse Before era responsavel por abrir o login da pagina toda vez que iniciava-se
-     *  um novo teste. Va para a classe SuiteTests, la tem um @BeforeClass que eh responsavel
-     *  por fazer esse login agora.
-     *
-     *  Caso precise executar um teste individualmente, descomente esse trecho e execute o teste,
-     *  apos isso, comente esse trecho novamente.
-     * **/
-//    @Before
-//    public void initializer() {
-//        page.accessHomePage();
-//
-//        page.setEmail("matheus69@gmail.com");
-//        page.setPassword("1111");
-//
-//        page.clickButtonEnter();
-//    }
+    @Before
+    public void initializer() {
+        page.accessHomePage();
+
+        page.setEmail("matheus69@gmail.com");
+        page.setPassword("1111");
+
+        page.clickButtonEnter();
+    }
 
     @After
     public void finalizeWebDriver() throws IOException {

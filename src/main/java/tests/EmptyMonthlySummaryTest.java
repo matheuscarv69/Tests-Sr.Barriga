@@ -15,6 +15,9 @@ public class EmptyMonthlySummaryTest extends BaseTest {
     public void isEmptyMonthlySummary() {
         menuPage.accessScreenMonthlySummary();
 
+        monthlySummaryPage.setYear("2016");
+        monthlySummaryPage.clickButtonBuscar();
+
         boolean isEmpty = monthlySummaryPage.isEmptyMonthlySummaryPage();
 
         Assert.assertTrue(isEmpty);

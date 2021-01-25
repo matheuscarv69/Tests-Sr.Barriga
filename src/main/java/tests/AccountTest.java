@@ -28,8 +28,8 @@ public class AccountTest extends BaseTest {
     public void test2AlterAccount() {
         menuPage.accessScreenAccountOptions();
 
-        accountPage.clickButtonAlterAccount("Conta do Teste");
-        accountPage.setAccountName("Conta do Teste alterada");
+        accountPage.clickButtonAlterAccount("Conta para alterar");
+        accountPage.setAccountName("Conta alterada");
         accountPage.clickButtonSalvar();
 
         Assert.assertEquals("Conta alterada com sucesso!", accountPage.getMessageSuccess());
@@ -39,13 +39,11 @@ public class AccountTest extends BaseTest {
     public void test3InsertAccountDuplicated() {
         menuPage.accessScreenInsertAccount();
 
-        accountPage.setAccountName("Conta do Teste alterada");
+        accountPage.setAccountName("Conta mesmo nome");
         accountPage.clickButtonSalvar();
 
         Assert.assertEquals("Já existe uma conta com esse nome!", accountPage.getMessageFailed());
     }
-
-
 
 
 }
