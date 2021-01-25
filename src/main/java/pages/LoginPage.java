@@ -24,5 +24,8 @@ public class LoginPage extends BasePage {
         clickButton(By.xpath("//button[.='Entrar']"));
     }
 
+    public void clickButtonReset(){
+        clickLink("reset");
+    }
 
 }

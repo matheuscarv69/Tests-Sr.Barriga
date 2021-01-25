@@ -8,7 +8,6 @@ import org.junit.runners.MethodSorters;
 import pages.MenuPage;
 import pages.MonthlySummaryPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MonthlySummaryTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();
